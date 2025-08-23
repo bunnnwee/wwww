@@ -30,7 +30,7 @@ app.get('/message', (req, res) => {
   messages.push(msg);
   setTimeout(() => {
     messages = messages.filter(m => m !== msg);
-  }, 1 * 60 * 1000);
+  }, 10 * 60 * 1000);
   res.send('Message received: ' + text);
 });
 
