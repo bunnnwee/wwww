@@ -17,6 +17,11 @@ app.use(express.json());
 
 // เก็บข้อความใน memory
 let messages = [];
+let x = 0
+app.get('/count', (req, res) => {
+  x = x + 1
+  res.send(x);
+});
 
 app.get('/message', (req, res) => {
   const text = req.query.msg;
