@@ -23,6 +23,9 @@ app.get('/count', (req, res) => {
   res.send(x);
 });
 
+app.get('/number' , (req , res) => {
+    res.send(messages.length())
+})
 app.get('/message', (req, res) => {
   const text = req.query.msg;
   if (!text) {
@@ -35,7 +38,7 @@ app.get('/message', (req, res) => {
   messages.push(msg);
   setTimeout(() => {
     messages = messages.filter(m => m !== msg);
-  }, 12 * 60 * 1000);
+  }, 13 * 60 * 1000);
   res.send('Message received: ' + text);
 });
 
